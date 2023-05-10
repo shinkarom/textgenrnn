@@ -90,7 +90,7 @@ def textgenrnn_generate(model, vocab,
         if not interactive:
             # auto-generate text without user intervention
             next_index = textgenrnn_sample(
-                model.predict(encoded_text, batch_size=1)[0],
+                model.predict(encoded_text, batch_size=1, verbose=0)[0],
                 next_temperature)
             next_char = indices_char[next_index]
             text += [next_char]
